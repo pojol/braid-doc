@@ -9,4 +9,11 @@
 #### 依赖项
 
 * Consul \(注册中心
+* Registerator \(容器注册
+* NSQ \(MQ
+* Jaeger \(分布式追踪
+* Redis \(内存型缓存
+* Braid-web \(可视化
+
+
 
