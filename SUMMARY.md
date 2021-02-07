@@ -8,6 +8,10 @@
 * [Discover](modules/discover.md)
 * [Balancer](modules/balancer.md)
 * [Elector](modules/elector.md)
+* [Linkcache](modules/linkcache.md)
+* [Mailbox](modules/mailbox.md)
+* [RPC](modules/rpc.md)
+* [Tracer](modules/tracer.md)
 
 ## Guide
 
