@@ -2,6 +2,11 @@
 
 * [Intro](README.md)
 
+## Guide
+
+* [Overview](guide/overview.md)
+* [1. 环境搭建](guide/untitled.md)
+
 ## Modules
 
 * [Overview](modules/overview.md)
@@ -12,9 +17,4 @@
 * [Mailbox](modules/mailbox.md)
 * [RPC](modules/rpc.md)
 * [Tracer](modules/tracer.md)
-
-## Guide
-
-* [Overview](guide/overview.md)
-* [1. 环境搭建](guide/untitled.md)
 
