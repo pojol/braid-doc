@@ -4,13 +4,13 @@
 
 ## Guide
 
-* [Overview](guide/overview.md)
+* [Guide Overview](guide/overview.md)
 * [1. 环境搭建](guide/环境搭建.md)
 * [2. Hello braid](guide/hello_braid.md)
 
 ## Modules
 
-* [Overview](modules/overview.md)
+* [Modules Overview](modules/overview.md)
 * [Discover](modules/discover.md)
 * [Balancer](modules/balancer.md)
 * [Elector](modules/elector.md)
