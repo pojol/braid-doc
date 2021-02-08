@@ -95,8 +95,7 @@ $ docker run -d -p 14001:14222/tcp hello:latest
 > 没有错的话，这个时候在consul中已经能看到刚刚运行的服务了
 > http://localhost:8500/ui
 
-<img src="https://i.postimg.cc/jjjkf4xc/image.png" width="700">
-
+<img src="https://i.postimg.cc/jjjkf4xc/image.png" width="100%" height="100%">
 
 
 ##### 延展
