@@ -4,8 +4,6 @@ description: 这一页将引导用户，运行一个带有`braid`的服务，尝
 
 # 2. Hello braid
 
-> 
->
 > 使用 go 1.13+ 进行演示
 
 
