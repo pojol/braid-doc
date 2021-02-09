@@ -5,10 +5,9 @@ description: 这个Guide希望能够帮助用户通过一些用例来一步一�
 # Overview
 
 
-
-1. [环境搭建](环境搭建.md)
-2. [Hello, braid!](hello_braid.md)
-3. [链式调用](链式调用.md)
+1. 环境搭建
+2. Hello, braid!
+3. 链式调用
 4. 链路缓存
 5. 负载均衡
 6. 分布式追踪
