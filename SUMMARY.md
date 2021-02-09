@@ -7,6 +7,7 @@
 * [1. 环境搭建](guide/环境搭建.md)
 * [2. Hello braid](guide/hello_braid.md)
 * [3. 链式调用](guide/链式调用.md)
+* [4. 链路缓存](guide/链路缓存.md)
 
 ## Modules
 

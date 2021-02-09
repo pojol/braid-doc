@@ -31,7 +31,7 @@ $ go get github.com/pojol/braid@v1.2.11
 
 > 构建 braid ，并将所需的module 注册进来
 
-```shell
+```golang
 func main() {
 
 	b, _ := braid.New(
