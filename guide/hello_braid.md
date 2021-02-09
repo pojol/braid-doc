@@ -95,7 +95,7 @@ $ docker run -d -p 14001:14222/tcp hello:latest
 > 没有错的话，这个时候在consul中已经能看到刚刚运行的服务了
 > http://localhost:8500/ui
 
-![consul_ui]<img src="https://github.com/pojol/braid-doc/blob/master/images/consul_regist.png" width="700" height=200 />
+<img src="https://github.com/pojol/braid-doc/blob/master/images/consul_regist.png" width="700" height=200 />
 
 ##### 延展
 > 服务运行后目前除了看到在consul中成功注册。但是还没有涉及到具体的逻辑。
