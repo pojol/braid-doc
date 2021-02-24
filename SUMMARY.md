@@ -8,6 +8,7 @@
 * [2. Hello braid](guide/hello_braid.md)
 * [3. 链式调用](guide/链式调用.md)
 * [4. 链路缓存](guide/链路缓存.md)
+* [5. 负载均衡](guide/负载均衡.md)
 
 ## Modules
 
