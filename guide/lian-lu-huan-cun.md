@@ -2,7 +2,7 @@
 description: 使用 Link-cache/linkerredis 模块
 ---
 
-# 4. 链路缓存
+# 5. 链路缓存
 
 > `注` 使用linkerredis，需要依赖redis
 

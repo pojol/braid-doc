@@ -2,7 +2,7 @@
 description: 这一页将引导用户尝试开启多个服务，并使用机器人进行测试。
 ---
 
-# 3. 链式调用
+# 4. 链式调用
 
 > 使用 [sample](https://github.com/pojol/braidgo-sample) v1.2.13
 

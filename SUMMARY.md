@@ -4,14 +4,15 @@
 
 ## Guide
 
-* [1. 环境搭建](guide/huan-jing-da-jian.md)
-* [2. Hello braid](guide/hello_braid.md)
-* [3. 链式调用](guide/lian-shi-tiao-yong.md)
-* [4. 链路缓存](guide/lian-lu-huan-cun.md)
-* [5. 负载均衡](guide/fu-zai-jun-heng.md)
-* [6. Tracer](guide/6.-tracer.md)
-* [7. Docker swarm](guide/7.-docker-swarm.md)
-* [8. DEV & OPS](guide/8.-dev-and-ops.md)
+* [1. 简介](guide/1.-jian-jie.md)
+* [2. 环境搭建](guide/huan-jing-da-jian.md)
+* [3. Hello braid](guide/hello_braid.md)
+* [4. 链式调用](guide/lian-shi-tiao-yong.md)
+* [5. 链路缓存](guide/lian-lu-huan-cun.md)
+* [6. 负载均衡](guide/fu-zai-jun-heng.md)
+* [7. Tracer](guide/6.-tracer.md)
+* [8. Docker swarm](guide/7.-docker-swarm.md)
+* [9. DEV & OPS](guide/8.-dev-and-ops.md)
 
 ## Modules
 

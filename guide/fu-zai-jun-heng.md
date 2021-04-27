@@ -2,7 +2,7 @@
 description: 默认的负载均衡模块 balancer/balancerswrr 平滑加权负载均衡
 ---
 
-# 5. 负载均衡
+# 6. 负载均衡
 
 > 在 module/client 调用invoke 执行实际上的rpc请求前，会先从发现的服务中中选取一个服务，这个选取的过程主要是由module/balancer提供
 >
