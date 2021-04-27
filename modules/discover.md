@@ -14,10 +14,33 @@ description: 服务发现
 
 ---
 
-### consul-discover 组件
+### consul-discover 内部提供的基于 consul 实现的discover模块
 | 模块提供的选项 |  |
 | ---- | ---- | 
 | WithTag | 发现标签，用于识别需要纳入到发现列表的服务节点 |
 | WithBlacklist | 黑名单列表，即便tag是匹配的，但是我依然想排除这个节点 |
 | WithSyncServiceInterval | 服务发现的频率（默认2秒 |
 | WithConsulAddr | 更改默认的consul地址 |
+
+---
+### 使用样例
+
+```go
+    b, _ := braid.New(
+		"sample",
+		mailboxnsq.WithLookupAddr([]string{nsqLookupAddr}),
+		mailboxnsq.WithNsqdAddr([]string{nsqdAddr}),
+	)
+
+	b.RegistModule(
+		braid.Discover(
+			discoverconsul.Name,
+			discoverconsul.WithConsulAddr(consulAddr),
+			discoverconsul.WithTag("sample-service-01"),
+		),
+	)
+
+	b.Init()
+	b.Run()
+	defer b.Close()
+```

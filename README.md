@@ -16,5 +16,5 @@ description: braid-go 是一个由golang实现的轻量易读的微服务框架�
 
 
 
-### 组件
+### 模块
 * [**Discover**](../modules/discover.md) 服务发现
