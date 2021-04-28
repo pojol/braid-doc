@@ -31,7 +31,6 @@ description: braid-go 是一个由golang实现的轻量易读的微服务框架�
 2. [Hello,braid!](../guide/hello_braid.md)
 3. [链式调用](../guide/链式调用.md)
 4. [在 Docker swarm 中运行](../guide/docker-swarm.md)
-5. [DEV & OPS](../guide/dev-and-ops.md)
 
 
 ### 工具

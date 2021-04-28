@@ -8,7 +8,6 @@
 * [2. Hello,braid!](guide/hello_braid.md)
 * [3. 链式调用](guide/链式调用.md)
 * [4. Docker swarm](guide/docker-swarm.md)
-* [5. DEV & OPS](guide/dev-and-ops.md)
 
 ## Modules
 
