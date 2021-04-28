@@ -1,10 +1,6 @@
 ---
-description: 默认的负载均衡模块 balancer/balancerswrr 平滑加权负载均衡
+description: 在 module/client 调用invoke 执行实际上的rpc请求前，会先从发现的服务中中选取一个服务，这个选取的过程主要是由module/balancer提供
 ---
-
-# 负载均衡
-
-> 在 module/client 调用invoke 执行实际上的rpc请求前，会先从发现的服务中中选取一个服务，这个选取的过程主要是由module/balancer提供
 
 > 负载均衡是一个内部的支撑服务，用户可以编写自己的负载均衡算法，也可以使用braid默认提供的负载均衡算法，不需要进行注册。
 
