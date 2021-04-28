@@ -25,13 +25,13 @@ description: braid-go 是一个由golang实现的轻量易读的微服务框架�
 * [**RPC**](../modules/rpc.md)
 * [**Tracer**](../modules/tracer.md) 分布式系统追踪服务
 
-
+ 
 ### Guide
-1. 环境搭建（安装支撑服务
-2. Hello,braid!
-3. 链式调用
-4. 在 Docker swarm 中运行
-5. DEV & OPS
+1. [环境搭建（安装支撑服务](../guide/环境搭建.md)
+2. [Hello,braid!](../guide/hello_braid.md)
+3. [链式调用](../guide/链式调用.md)
+4. [在 Docker swarm 中运行](../guide/docker-swarm.md)
+5. [DEV & OPS](../guide/dev-and-ops.md)
 
 
 ### 工具
