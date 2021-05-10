@@ -1,5 +1,5 @@
 ---
-description: ConsulDiscover 模块，这个模块的主要功能是从注册中心中发现服务节点的变更情况，并发布消息通知到其他模块。
+description: ConsulDiscover 通过Consul注册中心，发现指定Tag下节点的变更情况。创建一组 topic 并向其中发布变更消息，braid 内部的其他模块，或者用户都可以在这些 topic 中注册消费者，获取节点变更情况。
 ---
 
 * 选项
