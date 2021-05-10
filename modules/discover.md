@@ -17,8 +17,8 @@ description: ConsulDiscover 模块，这个模块的主要功能是从注册中�
 
 
 ### 注册到braid
-
 > 将 consul discover 注册到 braid
+
 ```go
     b, _ := braid.New(
 		"sample",
@@ -39,7 +39,9 @@ description: ConsulDiscover 模块，这个模块的主要功能是从注册中�
 	defer b.Close()
 ```
 
+
 ### Topic
+
 ```go
 discover.Node {
 	ID string	// 节点ID
@@ -57,6 +59,7 @@ discover.Node {
  > 有一个当前的服务节点有更新
 
 ### Consumer 样例
+
 ```go
 // 获取到 discover 注册的 topic，并在 topic 上创建一个订阅者 
 addServiceChannel := mailbox.GetTopic(discover.AddService).Sub()
