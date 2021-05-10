@@ -62,7 +62,7 @@ discover.Node {
 
 ```go
 // 获取到 discover 注册的 topic，并在 topic 上创建一个订阅者 
-addServiceChannel := mailbox.GetTopic(discover.AddService).Sub()
+addServiceChannel := mailbox.GetTopic(discover.AddService).Sub("Sample")
 
 go func() {
 	for {
@@ -75,3 +75,5 @@ go func() {
 	}
 }()
 ```
+
+> 注：关于 pub-sub 更多的信息请至 [**Mailbox**](mailbox.md) 中查看
