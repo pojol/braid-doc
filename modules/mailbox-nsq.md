@@ -5,7 +5,7 @@ description: 基于 nsq 封装的消息发布-订阅
 ### 消息模型
 
 #### API 消息
-> API消息主要用于`**服务**->**服务**`之间
+> API消息主要用于`服务->服务`之间
 * ctx 用于分布式追踪，存储调用链路的上下文信息
 * target 目标服务节点 例 "mail", braid 会依据服务发现和负载均衡信息，自动将消息发送到合适的节点
 * methon 目标节点支持的方法 例 "api.mail/send"
@@ -18,7 +18,7 @@ client.Invoke(ctx, target, methon, token, args, reply, opts...)
 ```
 
 #### Pub-sub 消息
-> Pub-sub消息主要用于`**模块**->**模块**`之间
+> Pub-sub消息主要用于`模块->模块`之间
 * 作用域
     * mailbox.ScopeProc 消息作用于`自身进程`中的模块
     * mailbox.ScopeCluster 消息将作用于`整个集群`中的模块
