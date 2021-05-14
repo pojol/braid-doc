@@ -96,10 +96,12 @@ consumer a receive 4
 * Pub-sub ScopeProc
 
 ```shell
+处理器: 2.2 GHz 四核Intel Core i7
 goos: darwin
 goarch: amd64
 pkg: github.com/pojol/braid-go/modules/mailboxnsq
-BenchmarkTestProc-8   	
- 7149286	       171 ns/op	     118 B/op	       3 allocs/op
+BenchmarkTestProc-2   4340389   302 ns/op   109 B/op   3 allocs/op
+BenchmarkTestProc-4   8527536   151 ns/op   122 B/op   3 allocs/op
+BenchmarkTestProc-8   7564869   161 ns/op   118 B/op   3 allocs/op
 PASS
 ```
