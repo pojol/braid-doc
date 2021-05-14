@@ -26,7 +26,7 @@ client.Invoke(ctx, target, methon, token, args, reply, opts...)
     * mailbox.ScopeProc 消息作用于`自身进程`中的模块
     * mailbox.ScopeCluster 消息将作用于`整个集群`中的模块
 * Topic
-    > 当使用 topic.Pub 的时候，消息会往 topic 中的 channel 投递，`每一个channel都会产生一份消息`。
+    > 当使用 topic.Pub 的时候，消息会往 topic 中的 channel 投递，`每一个channel都会产生一份消息`
     * 单一接收 （一个topic + channel x 1 : consumer x 1
     * 广播逻辑 （一个topic + channel x N : consumer x N
     * 竞争接收 （一个topic + channel x 1 : consumer x N
