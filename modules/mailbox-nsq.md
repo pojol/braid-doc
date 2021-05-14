@@ -91,3 +91,15 @@ consumer a receive 2
 consumer a receive 3
 consumer a receive 4
 ```
+
+#### Benchmark
+* Pub-sub ScopeProc
+
+```shell
+goos: darwin
+goarch: amd64
+pkg: github.com/pojol/braid-go/modules/mailboxnsq
+BenchmarkTestProc-8   	
+ 7149286	       171 ns/op	     118 B/op	       3 allocs/op
+PASS
+```
