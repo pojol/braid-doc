@@ -21,26 +21,12 @@ description: braid-go 是一个由golang实现的轻量易读的微服务框架�
 3. [链式调用](../guide/链式调用.md)
 4. [在 Docker swarm 中运行](../guide/docker-swarm.md)
 
-
 ### 模块
-* **Mailbox** 消息发布订阅 
-  * [mailbox-nsq](modules/mailbox-nsq.md)
-* **RPC**
-  * [grpc-client](modules/grpc-client.md)
-  * [grpc-server](modules/grpc-server.md)
-* **Discover** 服务发现
-  * [discover-consul](modules/discover-consul.md) 
-* **Elector** 选举
-  * [elector-consul](modules/elector-consul.md) 
-  * [elector-k8s](modules/elector-k8s.md) 
-* **LinkCache** 链路缓存
-  * [linkcache-redis](modules/linkcache-redis.md) 
-* Balancer 负载均衡
-  * [random](modules/balancer-random.md)
-  * [Smooth Weighted Round-Robin](modules/balancer-swrr.md)
-* **Tracer** 分布式系统追踪服务
-  * [jaegertracing](modules/tracer-jaeger.md) 
-
+|**Discovery**|**Balancing**|**Elector**|**RPC**|**Pub-sub**|**Tracer**|**LinkCache**|
+|-|-|-|-|-|-|-|
+|服务发现|负载均衡|选举|RPC|发布-订阅|分布式追踪|链路缓存|
+|[discoverconsul](modules/discover-consul.md)|[balancerrandom](modules/balancer-random.md)|[electorconsul](modules/elector-consul.md)|[grpc-client](modules/grpc-server.md)|[mailbox](modules/mailbox-nsq.md)|[jaegertracer](tracer-jaeger.md)|[linkerredis](https://github.com/pojol/braid-go-go/wiki/Guide-4.-%E4%BD%BF%E7%94%A8Link-cahe)
+||[balancerswrr](modules/balancer-swrr.md)|[electork8s](modules/elector-k8s.md)|[grpc-server](modules/grpc-server.md)|||
 
 
 ### 工具
