@@ -15,21 +15,32 @@ description: braid-go 是一个由golang实现的轻量易读的微服务框架�
 >    *  `Pub-sub` 消息，用于组件和组件之间的消息订阅&发布，用户也可以订阅 braid modules 中发布的消息，也可以在消息系统中自定义自己的 `Topic`
 
 
-
-### 模块
-* [**Mailbox**](../modules/mailbox.md) 消息发布订阅
-* [**Discover**](../modules/discover.md) 服务发现
-* [**Elector**](../modules/elector.md) 选举
-* [**LinkCache**](../modules/linkcache.md) 链路缓存
-* [**Balancer**](../modules/balancer.md) 负载均衡
-* [**Tracer**](../modules/tracer.md) 分布式系统追踪服务
-* [**RPC**](../modules/rpc.md)
- 
 ### Guide
 1. [环境搭建（安装支撑服务](../guide/环境搭建.md)
 2. [Hello,braid!](../guide/hello_braid.md)
 3. [链式调用](../guide/链式调用.md)
 4. [在 Docker swarm 中运行](../guide/docker-swarm.md)
+
+
+### 模块
+* **Mailbox** 消息发布订阅 
+  * [mailbox-nsq](modules/mailbox-nsq.md)
+* **RPC**
+  * [grpc-client](modules/grpc-client.md)
+  * [grpc-server](modules/grpc-server.md)
+* **Discover** 服务发现
+  * [discover-consul](modules/discover-consul.md) 
+* **Elector** 选举
+  * [elector-consul](modules/elector-consul.md) 
+  * [elector-k8s](modules/elector-k8s.md) 
+* **LinkCache** 链路缓存
+  * [linkcache-redis](modules/linkcache-redis.md) 
+* Balancer 负载均衡
+  * [random](modules/balancer-random.md)
+  * [Smooth Weighted Round-Robin](modules/balancer-swrr.md)
+* **Tracer** 分布式系统追踪服务
+  * [jaegertracing](modules/tracer-jaeger.md) 
+
 
 
 ### 工具

@@ -1,5 +1,5 @@
 ---
-description: link-cache 模块可以保证用户`token`在微服务中的调用，始终走的是固定线路。这将帮助用户在服务中编写一些针对性的本地优化
+description: 使用 redis 来实现链路缓存
 ---
 
 > `注` 使用linkerredis，需要依赖redis

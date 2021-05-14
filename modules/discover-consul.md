@@ -1,5 +1,5 @@
 ---
-description: ConsulDiscover 通过Consul注册中心，发现指定Tag下节点的变更情况。创建一组 topic 并向其中发布变更消息，braid 内部的其他模块，或者用户都可以在这些 topic 中注册消费者，获取节点变更情况。
+description: 使用 consul 实现服务发现
 ---
 
 * 选项
