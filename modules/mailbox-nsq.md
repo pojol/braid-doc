@@ -1,8 +1,9 @@
 ---
-description: 基于 nsq 封装的消息发布-订阅
+description: 基于 nsq 封装的消息发布-订阅 ( 额外实现了基于 nsq 消息模型的进程内消息发布-消费功能
 ---
 
 ### 消息模型
+<img src="../images/nsq.gif" width="420" height=281 />
 
 #### API 消息
 > API消息主要用于`服务->服务`之间
@@ -37,7 +38,6 @@ client.Invoke(ctx, target, methon, token, args, reply, opts...)
 * `多个`消费者`单个` Channel
 
 ```go
-
 topic := "test.procNotify"
 
 mailbox.RegistTopic(topic, mailbox.ScopeProc)
