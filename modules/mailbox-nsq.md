@@ -3,7 +3,6 @@ description: 基于 nsq 封装的消息发布-订阅 ( 额外实现了基于 nsq
 ---
 
 ### 消息模型
-<img src="../images/nsq.gif" width="420" height=281 />
 
 #### API 消息
 > API消息主要用于`服务->服务`之间
@@ -22,6 +21,8 @@ client.Invoke(ctx, target, methon, token, args, reply, opts...)
 
 #### Pub-sub 消息
 > Pub-sub消息主要用于`模块->模块`之间
+
+<img src="../images/nsq.gif" width="420" height=281 />
 
 * 作用域
     * mailbox.ScopeProc 消息作用于`自身进程`中的模块
