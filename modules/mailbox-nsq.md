@@ -106,3 +106,14 @@ BenchmarkTestProc-4   8527536   151 ns/op   122 B/op   3 allocs/op
 BenchmarkTestProc-8   7564869   161 ns/op   118 B/op   3 allocs/op
 PASS
 ```
+
+* Pub-sub ScopeCluster
+
+```shell
+腾讯云 4核 8GB
+goos: linux
+goarch: amd64
+BenchmarkTestProc-2   70556   17234 ns/op   540 B/op   16 allocs/op
+BenchmarkTestProc-4   71773   19773 ns/op   606 B/op   18 allocs/op
+BenchmarkTestProc-8   78231   16100 ns/op   510 B/op   15 allocs/op
+```
