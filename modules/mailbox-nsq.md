@@ -93,10 +93,11 @@ consumer a receive 3
 consumer a receive 4
 ```
 
-#### Benchmark
-* Pub-sub ScopeProc
+#### **Pub-sub** Benchmark
+*  ScopeProc
 
 ```shell
+$ go test -benchmem -run=^$ -bench ^BenchmarkTestProc -cpu 2,4,8
 处理器: 2.2 GHz 四核Intel Core i7
 goos: darwin
 goarch: amd64
@@ -107,13 +108,14 @@ BenchmarkTestProc-8   7564869   161 ns/op   118 B/op   3 allocs/op
 PASS
 ```
 
-* Pub-sub ScopeCluster
+* ScopeCluster
 
 ```shell
+$ go test -benchmem -run=^$ -bench ^BenchmarkClusterBroadcast -cpu 2,4,8
 腾讯云 4核 8GB
 goos: linux
 goarch: amd64
-BenchmarkTestProc-2   70556   17234 ns/op   540 B/op   16 allocs/op
-BenchmarkTestProc-4   71773   19773 ns/op   606 B/op   18 allocs/op
-BenchmarkTestProc-8   78231   16100 ns/op   510 B/op   15 allocs/op
+BenchmarkClusterBroadcast-2   70556   17234 ns/op   540 B/op   16 allocs/op
+BenchmarkClusterBroadcast-4   71202   18975 ns/op   676 B/op   20 allocs/op
+BenchmarkClusterBroadcast-8   62098   19037 ns/op   662 B/op   20 allocs/op
 ```
