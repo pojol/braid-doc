@@ -15,6 +15,12 @@ description: 使用 consul 实现服务发现
 | WithSyncServiceInterval | 服务发现的频率（默认2秒 |
 | WithConsulAddr | 更改默认的consul地址 |
 
+| Topic | | |
+| ---- | ---- | ---- |
+| ServiceUpdate | 服务更新 topic 包含如下3种事件 ||
+|| EventAddService | 有新的服务加入 |
+||EventRemoveService| 有旧的服务退出 |
+||EventUpdateService| 有旧的服务更新 |
 
 ### 注册到braid
 > 将 consul discover 注册到 braid
@@ -40,40 +46,28 @@ description: 使用 consul 实现服务发现
 ```
 
 
-### Topic
+### Topic 样例
 
 ```go
 discover.Node {
-	ID string	// 节点ID
+	ID string		// 节点ID
 	Name    string  // 节点名 （例 gate | mail ...
 	Address string	// 节点地址（例 0.0.0.41
-	Weight int // 节点的权重值
+	Weight int 		// 节点的权重值
 }
 ```
 
-* topic.addService
- > 有一个新的服务节点加入到发现列表中
-* topic.removeService
- > 有一个当前的服务节点离开发现列表
-* topic.updateService
- > 有一个当前的服务节点有更新
-
-### Consumer 样例
-
 ```go
 // 获取到 discover 注册的 topic，并在 topic 上创建一个订阅者 
-addServiceChannel := mailbox.GetTopic(discover.AddService).Sub("Sample")
+topic := mailbox.GetTopic(discover.UpdateService)
 
-go func() {
-	for {
-		select {
-			case msg := <-addServiceChannel.OnArrived():
-				var nod discover.Node
-				nod := discover.DecodeAddServiceMsg(msg)
-				// todo
-		}
-	}
-}()
+c := topic.Sub("Balancer")	// balancer consumer
+c.Arrived(func(msg *mailbox.Message){
+	var nod discover.Node
+	nod := discover.DecodeAddServiceMsg(msg)
+	// todo
+})
+
 ```
 
 > 注：关于 pub-sub 更多的信息请至 [**Mailbox**](mailbox.md) 中查看
