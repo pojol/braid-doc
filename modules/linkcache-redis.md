@@ -4,10 +4,46 @@ description: 使用 redis 来实现链路缓存
 
 > `注` 使用linkerredis，需要依赖redis
 
-* 使用
-* 释放
-* 对负载均衡的支持
+* 选项
+* 注册
+* Topic
 
+### 选项
+| 提供的选项 |  |
+| ---- | ---- | 
+| WithRedisAddr | redis 地址 |
+| WithRedisMaxIdle | redis client 的最大空闲连接（默认16 |
+| WithRedisMaxActive | redis client 的最大活跃连接（默认128 |
+| WithSyncTick | 同步服务的权重间隔（默认10s |
+| WithMode | linkcache 的执行模式 `local`, `redis` ，默认为 `local` |
+
+| Topic | | |
+| ---- | ---- | ---- |
+| ServiceLinkNum | 服务中的链路信息 ||
+|TokenUnlink| token 离线信息  ||
+
+### 注册
+
+```go
+b.RegistModule(
+    braid.LinkCache(linkerredis.Name,
+        linkerredis.WithRedisAddr(redisAddr),
+        linkerredis.WithMode(linkerredis.LinkerRedisModeLocal),  // 默认是 local 
+    ),
+)
+```
+
+### Topic
+
+```go
+// 这里需要注意⚠️，因为是集群消息，因此建立channel的时候需要传入唯一id，不然的话有可能会和其他的服务产生竞争。
+linkcacheConsumer := rl.mb.GetTopic(linkcache.TokenUnlink).Sub(Name + "-" + ip)
+
+linkcacheConsumer.Arrived(func(msg *mailbox.Message) {
+	token := string(msg.Body)
+    // todo     
+})
+```
 
 ##### 使用
 
@@ -20,16 +56,6 @@ description: 使用 redis 来实现链路缓存
 
 > 简单来说就是对外的网关节点使用 redis 模式，内部节点采用 local 模式。
 
-**注册一个以local模式运行的link-cache**
-
-```go
-b.RegistModule(
-    braid.LinkCache(linkerredis.Name,
-        linkerredis.WithRedisAddr(redisAddr),
-        linkerredis.WithMode(linkerredis.LinkerRedisModeLocal),  // 默认是redis 
-    ),
-)
-```
 
 ##### 释放
 

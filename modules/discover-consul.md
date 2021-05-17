@@ -3,9 +3,8 @@ description: 使用 consul 实现服务发现
 ---
 
 * 选项
-* 注册到braid
+* 注册
 * Topic
-* Consumer 样例
 
 ### 选项
 | 提供的选项 |  |
@@ -22,14 +21,14 @@ description: 使用 consul 实现服务发现
 ||EventRemoveService| 有旧的服务退出 |
 ||EventUpdateService| 有旧的服务更新 |
 
-### 注册到braid
+### 注册
 > 将 consul discover 注册到 braid
 
 ```go
     b, _ := braid.New(
 		"sample",
 		mailboxnsq.WithLookupAddr([]string{nsqLookupAddr}),
-		mailboxnsq.WithNsqdAddr([]string{nsqdAddr}),
+		mailboxnsq.WithNsqdAddr([]string{nsqdTCPAddr}, []string{nsqdHTTPAddr}),
 	)
 
 	b.RegistModule(
@@ -39,14 +38,10 @@ description: 使用 consul 实现服务发现
 			discoverconsul.WithTag("sample-service-01"),
 		),
 	)
-
-	b.Init()
-	b.Run()
-	defer b.Close()
 ```
 
 
-### Topic 样例
+### Topic
 
 ```go
 discover.Node {
