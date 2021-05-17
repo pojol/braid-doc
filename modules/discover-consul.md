@@ -14,12 +14,12 @@ description: 使用 consul 实现服务发现
 | WithSyncServiceInterval | 服务发现的频率（默认2秒 |
 | WithConsulAddr | 更改默认的consul地址 |
 
-| Topic | | |
-| ---- | ---- | ---- |
-| ServiceUpdate | 服务更新 topic 包含如下3种事件 ||
-|| EventAddService | 有新的服务加入 |
-||EventRemoveService| 有旧的服务退出 |
-||EventUpdateService| 有旧的服务更新 |
+| Topic | 作用域 | 概述 |  |
+| ---- | ---- | ---- |---- |
+| ServiceUpdate | Proc | 服务更新 topic 包含如下3种事件 |
+||| EventAddService | 有新的服务加入 |
+|||EventRemoveService| 有旧的服务退出 |
+|||EventUpdateService| 有旧的服务更新 |
 
 ### 注册
 > 将 consul discover 注册到 braid

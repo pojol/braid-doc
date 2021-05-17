@@ -17,10 +17,10 @@ description: 使用 redis 来实现链路缓存
 | WithSyncTick | 同步服务的权重间隔（默认10s |
 | WithMode | linkcache 的执行模式 `local`, `redis` ，默认为 `local` |
 
-| Topic | | |
+| Topic | 作用域 | 概述 |
 | ---- | ---- | ---- |
-| ServiceLinkNum | 服务中的链路信息 ||
-|TokenUnlink| token 离线信息  ||
+| ServiceLinkNum | Cluster | 服务中的链路信息 |
+|TokenUnlink| Cluster  |token 离线信息|
 
 ### 注册
 

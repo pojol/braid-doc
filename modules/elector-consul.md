@@ -13,9 +13,9 @@ description: 使用 consul 实现选举
 | WithLockTick | 更新主从信息的频率（默认2秒 |
 | WithSessionTick | 更新consul session的频率（默认5秒 |
 
-| Topic | | |
+| Topic | 作用域 | 概述 |
 | ---- | ---- | ---- |
-| ChangeState | 服务主从信息变更 ||
+| ChangeState | Proc | 服务主从信息变更 |
 
 
 ### 注册
