@@ -2,9 +2,14 @@
 description: 使用 consul 实现服务发现
 ---
 
+* 接口
 * 选项
-* 注册
 * Topic
+* 注册样例
+* Topic样例
+
+### 接口
+> 无
 
 ### 选项
 | 提供的选项 |  |
@@ -14,6 +19,8 @@ description: 使用 consul 实现服务发现
 | WithSyncServiceInterval | 服务发现的频率（默认2秒 |
 | WithConsulAddr | 更改默认的consul地址 |
 
+
+### Topic
 | Topic | 作用域 | 概述 |  |
 | ---- | ---- | ---- |---- |
 | ServiceUpdate | Proc | 服务更新 topic 包含如下3种事件 |
@@ -21,27 +28,26 @@ description: 使用 consul 实现服务发现
 |||EventRemoveService| 有旧的服务退出 |
 |||EventUpdateService| 有旧的服务更新 |
 
-### 注册
-> 将 consul discover 注册到 braid
+### 注册样例
 
 ```go
-    b, _ := braid.New(
-		"sample",
-		mailboxnsq.WithLookupAddr([]string{nsqLookupAddr}),
-		mailboxnsq.WithNsqdAddr([]string{nsqdTCPAddr}, []string{nsqdHTTPAddr}),
-	)
+b, _ := braid.New(
+	"sample",
+	mailboxnsq.WithLookupAddr([]string{nsqLookupAddr}),
+	mailboxnsq.WithNsqdAddr([]string{nsqdTCPAddr}, []string{nsqdHTTPAddr}),
+)
 
-	b.RegistModule(
-		braid.Discover(
-			discoverconsul.Name,
-			discoverconsul.WithConsulAddr(consulAddr),
-			discoverconsul.WithTag("sample-service-01"),
-		),
-	)
+b.RegistModule(
+	braid.Discover(
+		discoverconsul.Name,
+		discoverconsul.WithConsulAddr(consulAddr),
+		discoverconsul.WithTag("sample-service-01"),
+	),
+)
 ```
 
 
-### Topic
+### Topic样例
 
 ```go
 discover.Node {
@@ -50,19 +56,16 @@ discover.Node {
 	Address string	// 节点地址（例 0.0.0.41
 	Weight int 		// 节点的权重值
 }
-```
 
-```go
-// 获取到 discover 注册的 topic，并在 topic 上创建一个订阅者 
+// 获取到 discover 注册的 topic
 topic := mailbox.GetTopic(discover.UpdateService)
-
-c := topic.Sub("Balancer")	// balancer consumer
-c.Arrived(func(msg *mailbox.Message){
+// 在 topic 上创建一个 channel ，并获取到它的 consumer
+consumer := topic.Sub("sample_channel")
+// 绑定消息到达函数
+consumer.Arrived(func(msg *mailbox.Message){
 	var nod discover.Node
 	nod := discover.DecodeAddServiceMsg(msg)
 	// todo
 })
 
 ```
-
-> 注：关于 pub-sub 更多的信息请至 [**Mailbox**](mailbox.md) 中查看
