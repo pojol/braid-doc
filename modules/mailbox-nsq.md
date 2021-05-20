@@ -6,25 +6,9 @@ description: 基于 nsq 封装的消息发布-订阅 ( 额外实现了基于 nsq
 * 示例
 * Benchmark
 
-### 消息模型
-
-#### API 消息
-> API消息主要用于`服务->服务`之间
-
-* ctx 用于分布式追踪，存储调用链路的上下文信息
-* target 目标服务节点 例 "mail", braid 会依据服务发现和负载均衡信息，自动将消息发送到合适的节点
-* methon 目标节点支持的方法 例 "api.mail/send"
-* token 调用者的唯一凭据（用于链路缓存
-* args 输入参数
-* reply 回复参数
-* opts... gpc调用的额外参数选项
-
-```go
-client.Invoke(ctx, target, methon, token, args, reply, opts...)
-```
 
 #### Pub-sub 消息
-> Pub-sub消息主要用于`模块->模块`之间
+> Pub-sub消息主要用于`模块`->`模块`之间
 
 <img src="../images/nsq.gif" width="420" height=281 />
 
