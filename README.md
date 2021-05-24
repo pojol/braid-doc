@@ -4,7 +4,7 @@ description: braid-go 是一个由golang实现的轻量易读的微服务框架�
 
 # 简介
 
-> braid 的实现设想是通过`模块化`构建出一套适用于各个场合的微服务架构，另外通过内部的`消息模型`进行`服务`&`模块`之间的通信。
+> braid 的实现设想是通过`模块化`构建出一套适用于各个场合的微服务架构，另外可以通过内部的`消息模型`进行`服务`&`模块`之间的通信。
 
 
 
@@ -21,6 +21,8 @@ description: braid-go 是一个由golang实现的轻量易读的微服务框架�
 2. [Hello,braid!](../guide/hello_braid.md)
 3. [链式调用](../guide/链式调用.md)
 4. [在 Docker swarm 中运行](../guide/docker-swarm.md)
+5. 如何使用 tracer 模块，监控集群中程序运行的内部状态
+6. 如何利用 link-cache 模块，实现惰性缓存（Lazy cache
 
 
 ### 模块
