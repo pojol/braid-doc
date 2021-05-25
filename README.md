@@ -4,6 +4,7 @@ description: braid-go 是一个由golang实现的轻量易读的微服务框架�
 
 # 简介
 
+> 这个图用于描述下面讲述到的几个关键字 `服务` `节点` `模块` `RPC` `Pub-sub`
 <img src="images/service.png" width="650" height=258 />
 
 ---
